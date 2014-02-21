@@ -178,6 +178,7 @@ inoremap <C-n> <DOWN>
 inoremap <C-p> <UP>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
+imap jj <esc>
 
 """"""""""""""""""""""""""""""
 " WinManager Config 
