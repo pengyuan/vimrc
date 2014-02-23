@@ -126,59 +126,6 @@ if !exists(":DiffOrig")
 endif
 
 
-" 设置编码自动识别, 中文引号显示  
-"set fileencodings=utf-8,cp936,big5,euc-jp,euc-kr,latin1,ucs-bom  
-set fileencodings=utf-8,gbk  
-set ambiwidth=double 
-
-"ColorScheme
-colorscheme desert
-
-" 允许退格键删除和tab操作  
-set smartindent  
-set smarttab  
-set expandtab  
-set tabstop=4  
-set softtabstop=4  
-set shiftwidth=4  
-set backspace=2
-set textwidth=79
-
-" 启用鼠标  
-set mouse=a
-
-"不要菜单栏和工具条
-set guioptions-=m
-set guioptions-=T
-  
-"启动时自动最大化
-au GUIEnter * simalt ~x    
-  
-" 启用行号  
-set nu 
-
-"自动补全  
-filetype plugin indent on
-set completeopt=longest,menu
-"自动补全命令时候使用菜单式匹配列表  
-set wildmenu
-
-"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-"autocmd FileType java set omnifunc=javacomplete#Complet
-"需要编译时指定python版本，否则无法实现自动补全（忽略此万能补全，采用Pydiction插件）
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-
-
-inoremap <C-n> <DOWN>
-inoremap <C-p> <UP>
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
-imap jj <esc>
 
 set nocompatible              " be iMproved
 filetype off                  " required!
@@ -242,3 +189,59 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1 
 let g:miniBufExplModSelTarget = 1 
 
+
+
+
+" 设置编码自动识别, 中文引号显示  
+"set fileencodings=utf-8,cp936,big5,euc-jp,euc-kr,latin1,ucs-bom  
+set fileencodings=utf-8,gbk  
+set ambiwidth=double 
+
+"ColorScheme
+colorscheme desert
+
+" 允许退格键删除和tab操作  
+set smartindent  
+set smarttab  
+set expandtab  
+set tabstop=4  
+set softtabstop=4  
+set shiftwidth=4  
+set backspace=2
+set textwidth=79
+
+" 启用鼠标  
+set mouse=a
+
+"不要菜单栏和工具条
+set guioptions-=m
+set guioptions-=T
+  
+"启动时自动最大化
+au GUIEnter * simalt ~x    
+  
+" 启用行号  
+set nu 
+
+"自动补全  
+filetype plugin indent on
+set completeopt=longest,menu
+"自动补全命令时候使用菜单式匹配列表  
+set wildmenu
+
+"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+"autocmd FileType java set omnifunc=javacomplete#Complet
+"需要编译时指定python版本，否则无法实现自动补全（忽略此万能补全，采用Pydiction插件）
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+
+
+inoremap <C-n> <DOWN>
+inoremap <C-p> <UP>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+imap jj <esc>
