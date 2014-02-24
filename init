@@ -165,9 +165,11 @@ Bundle 'CSApprox'
 Bundle 'Pydiction'
 "let g:pydiction_location = '/home/victorfu/.vim/bundle/Pydiction/complete-dict'
 
-" zencoding，html代码补全
-" zencoding，html代码补全
-Bundle "mattn/emmet-vim"     
+" zencoding，前端代码利器/html标签补全
+Bundle 'mattn/emmet-vim'
+
+" 括号补全
+Bundle 'jiangmiao/auto-pairs'
 
 filetype plugin indent on     " required!
 
@@ -195,7 +197,7 @@ let g:miniBufExplModSelTarget = 1
 " 设置编码自动识别, 中文引号显示  
 "set fileencodings=utf-8,cp936,big5,euc-jp,euc-kr,latin1,ucs-bom  
 set fileencodings=utf-8,gbk  
-set ambiwidth=double 
+set ambiwidth=double
 
 "ColorScheme
 colorscheme desert
@@ -208,7 +210,11 @@ set tabstop=4
 set softtabstop=4  
 set shiftwidth=4  
 set backspace=2
-set textwidth=79
+
+" 自动换行
+" set textwidth = 79
+" 自动折行
+" set nowrap
 
 " 启用鼠标  
 set mouse=a
@@ -245,3 +251,28 @@ inoremap <C-p> <UP>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 imap jj <esc>
+
+
+" 设置窗口ctrl+hjkl快速切换
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+ 
+" 设置窗口ctrl+shift+上下左右键改变窗口大小
+nnoremap <C-S-Left> 5<c-w>< 
+nnoremap <C-S-Down> 5<c-w>-
+nnoremap <C-S-Up> 5<c-w>+
+nnoremap <C-S-Right> 5<c-w>>
+
+" 设置标签alt+ctrl+左右键移动标签
+nnoremap <silent> <M-C-left> :if tabpagenr() == 1\|exe "tabm ".tabpagenr("$")\|el\|exe "tabm ".(tabpagenr()-2)\|en<CR>
+nnoremap <silent> <M-C-right> :if tabpagenr() == tabpagenr("$")\|tabm 0\|el\|exe "tabm ".tabpagenr()\|en<CR>
+
+" 设置alt+左右键切换标签
+nnoremap <silent> <M-left> gT
+nnoremap <silent> <M-right> gt
+
+" 设置ctrl+左右键切换缓冲区
+nnoremap <silent> <C-left> :bnext<cr>
+nnoremap <silent> <C-right> :bNext<cr>
